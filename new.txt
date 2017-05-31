@@ -1,4 +1,0 @@
-c:\systprom\options\icegis
-
-2 папки
-umrenderer.xml
