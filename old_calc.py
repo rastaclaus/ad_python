@@ -1,33 +1,33 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-N_STRINGS = [
-    ' --      --  --      --  --  --  --  -- ',
-    '|  |   |   |   ||  ||   |      ||  ||  |',
-    '|  |   |   |   ||  ||   |      ||  ||  |',
-    '         --  --  --  --  --      --  -- ',
-    '|  |   ||      |   |   ||  |   ||  |   |',
-    '|  |   ||      |   |   ||  |   ||  |   |',
-    ' --      --  --      --  --      --  -- ']
+N_SRUCT = [
+           ' - ',
+           '| |',
+           ' - ',
+           '| |',
+           ' - ']
+NUMS = {
+        0: [0, 1, 2, 4, 5, 6],
+        1: [2, 5],
+        2: [0, 2, 3, 4, 6],
+        3: [0, 2, 3, 5, 6],
+        4: [1, 2, 3, 5],
+        5: [0, 1, 3, 5, 6],
+        6: [0, 1, 3, 4, 5, 6],
+        7: [0, 2, 5],
+        8: [0, 1, 2, 3, 4, 5, 6],
+        9: [0, 1, 2, 3, 5, 6]
+}
 
-NUMS = {k: list() for k in range(10)}
+
+def lcd_line(num, size, line_num):
+    if line_num == 0:
 
 
-def chunks(l, n):
-    for i in range(0, len(l), n):
-        yield(l[i:i+n])
 
-for line in N_STRINGS:
-    for i, chunk in enumerate(chunks(line, 4)):
-        NUMS[i].append(chunk)
+def lcd_num(num, size):
+    res = []
+    for l in range(2 * size + 3):
+        res.append(lcd_line(num, size, l))
+    return res
 
-
-def print_numbers(nlist):
-    print('x' + len(nlist)*4*'-' + 'x')
-    for j in range(7):
-        line = '|' + ''.join([NUMS[i][j] for i in nlist]) + '|'
-        print(line)
-    print('x' + len(nlist)*4*'-' + 'x')
-
-if __name__ == '__main__':
-    nums = list(map(int, list(input())))
-    print_numbers(nums)
