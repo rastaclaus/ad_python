@@ -12,18 +12,24 @@ def directions():
 def spirale_index(n):
     dirs = directions()
     row, col = 0, 0
-    dir = next(dirs)
-    count = 0
-    l = n-1
+    d = next(dirs)
+    filled = []
     for i in range(n**2):
-        yield (i, row, col)
-        row, col = row + dir[0], col + dir[1]
-        count += 1
-        if count == l:
-            count = 0
-            dir = next(dirs)
-            if dir == (-1, 0):
-                l -= 1
+        if (row, col) in filled \
+                or row < 0 or row >= n \
+                or col < 0 or col >= n:
+            print(row, col)
+            row -= d[0]
+            col -= d[1]
+            d = next(dirs)
+            row += d[0]
+            col += d[1]
+        else:
+            yield(i, row, col)
+            filled.append((row, col))
+            print(filled)
+            row += d[0]
+            col += d[1]
 
 
 def get_sqmattr(n):
@@ -35,9 +41,6 @@ if __name__ == '__main__':
     n = int(input())
     matr = get_sqmattr(n)
     im = spirale_index(n)
-    pprint(matr)
     for i, row, col in im:
-        print(i, row, col)
         matr[row][col] = i
-        pprint(matr)
     pprint(matr)
