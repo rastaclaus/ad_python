@@ -1,0 +1,24 @@
+9C JC QC KC AC _ Flush
+9C JC QC KC 9D _ Pair
+AC JC QC KC AD _ Pair
+2C 2S QC KC 9D _ Pair
+10H JD QD KS AC _ Straight
+2C 3C 4C 5C AC _ Straight Flush
+6S 7S 8S 9S 10S _ Straight Flush
+10C 7D 8S 9H 6C _ Straight
+2C 3D 4S 5H AC _ Straight
+AC 3D 9C 5C 6C _ High card
+AC 2H 3D 4C 5C _ Straight
+AC QC QC 10C AC _ Flush
+10H JH QH KH AH _ Royal Flush
+JS QS AS KS 10S _ Royal Flush
+10S 10D 10C KD AD _ Three of a Kind
+AC 10D 10C AS AD _ Full House
+AC 2D 2C AS AD _ Full House
+2C 10D 10C 2S 2D _ Full House
+10C JS AC 10D AH _ Two pair
+10C 10S 10D 10D AH _ Four of a Kind
+AC AS 10D AD AH _ Four of a Kind
+9C JC QH KC AC _ High card
+10C AS 10H AD AC _ Full House
+10H AC QD KS JH _ Straight
